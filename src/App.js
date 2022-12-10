@@ -4,6 +4,7 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
+import BookPage from './pages/BookPage';
 
 const App = () => (
   <Router>
@@ -14,7 +15,7 @@ const App = () => (
       />
       <Route
         path="/authors"
-        element={<Authors />}
+        element={<BookPage />}
       />
     </Routes>
   </Router>

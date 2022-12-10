@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const AddBook = () =>(
+const AddBook = () => (
   <div className="add_section">
     <h2 className="form_title">ADD NEW BOOK</h2>
     <form className="form">
@@ -13,6 +13,6 @@ const AddBook = () =>(
       <button className="add_button" type="submit">ADD BOOK</button>
     </form>
   </div>
-  );
+);
 
 export default AddBook;

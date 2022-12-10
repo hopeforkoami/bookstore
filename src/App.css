@@ -56,7 +56,15 @@ font-size: 1rem;
 color: blue;
 text-decoration: underline;	
 }
-
+.profil_button{
+background-color: inherit;
+border: none;
+height: 30px;
+width: 30px;
+}
+.profil_icon{
+  
+}
 .section {
 padding: 4%;
 }
@@ -141,6 +149,9 @@ display: flex;
 }
 .reading_progress{
 display: flex;
+}
+.progress_diagram{
+  height: 6rem;
 }
 .progress_details{
 display: flex;
