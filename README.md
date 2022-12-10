@@ -14,7 +14,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Math-Magicians ](#-math-magicians-)
+- [📖 BookStore ](#-bookstore-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -35,9 +35,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Math-Magicians <a name="about-project"></a>
+# 📖 BookStore <a name="about-project"></a>
 
-**Math-Magicians** is a Single Page Application (SPA) that allows users to make simple calculations and read a math-related quote.
+**BookStore** is a Single Page Application (SPA) that allows users to Add Books and update his progress in books reading.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -84,7 +84,7 @@ Clone this repository to your desired folder:
 
 - Clone the project using by running the following command:
 
-`git clone https://github.com/hopeforkoami/Math-Magicians.git`
+`git clone https://github.com/hopeforkoami/bookstore.git`
 
 ### Install
 
@@ -107,7 +107,7 @@ To run tests, run the following command:
 
 ### Deployment
 
-You can deploy this project using: https://math-magician-react-st.onrender.com
+this project has not yet been deployed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +124,7 @@ You can deploy this project using: https://math-magician-react-st.onrender.com
 ## 🔭 Future Features <a name="future-features"></a>
 
 > Describe 1 - 3 features you will add to the project.
-- **Add scientific calculator**
+- **Add categories and Authors and read books directly**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +144,7 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank...
+I would like to thank my code reviewers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
