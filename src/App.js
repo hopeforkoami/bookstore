@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import BookPage from './pages/BookPage';
+import CategoryPage from './pages/CategoryPage';
 
 const App = () => (
   <Router>
@@ -14,8 +15,8 @@ const App = () => (
         element={<BookPage />}
       />
       <Route
-        path="/authors"
-        element={<BookPage />}
+        path="/category"
+        element={<CategoryPage />}
       />
     </Routes>
   </Router>

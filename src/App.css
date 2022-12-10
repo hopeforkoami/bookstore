@@ -24,6 +24,7 @@ header {
 
 .together_Header_elmts {
   display: flex;
+  align-items: center;
 }
 
 .project_title {
@@ -266,6 +267,20 @@ header {
 }
 
 .add_button {
+  cursor: pointer;
+  width: 20%;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+}
+
+.category_button {
   cursor: pointer;
   width: 20%;
   padding: 12px;
