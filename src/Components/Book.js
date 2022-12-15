@@ -3,8 +3,12 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import PropTypes from 'prop-types';
 
+const handleRemoveClick = (id) => {
+  console.log(`remove button triggered for ${id}`);
+};
 const Book = (props) => {
   const { bookdata } = props;
+
   const readingPrctg = Math.floor((bookdata.crtChp / bookdata.nbreChp) * 100);
   return (
     <li className="bookElmt">
@@ -14,7 +18,11 @@ const Book = (props) => {
         <span className="book_author">{bookdata.author}</span>
         <ul className="book_actions">
           <li className="book_actions_elmt book_actions_elmt_first book_comment">Comments</li>
-          <li className="book_actions_elmt book_remove">Remove</li>
+          <li className="book_actions_elmt book_remove">
+            <button type="button" onClick={handleRemoveClick}>
+              Remove
+            </button>
+          </li>
           <li className="book_actions_elmt book_edit">Edit</li>
         </ul>
       </div>
