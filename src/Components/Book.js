@@ -4,11 +4,10 @@ import 'react-circular-progressbar/dist/styles.css';
 import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { bookdata } = props;
+  const { bookdata, removeBookFromList } = props;
   const clickHandler = () => {
-    console.log('test');
+    removeBookFromList(bookdata.id);
   };
-  console.log(props);
   const readingPrctg = Math.floor((bookdata.crtChp / bookdata.nbreChp) * 100);
   return (
     <li className="bookElmt">
@@ -50,13 +49,13 @@ const Book = (props) => {
 
 Book.propTypes = {
   bookdata: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
     nbreChp: PropTypes.number,
     crtChp: PropTypes.number,
     category: PropTypes.string,
   }).isRequired,
-  //  removeBookFromList: PropTypes.func.isRequired,
+  removeBookFromList: PropTypes.func.isRequired,
 };
 export default Book;
