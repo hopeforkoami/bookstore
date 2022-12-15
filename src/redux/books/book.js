@@ -1,3 +1,5 @@
+import { v4 } from 'uuid';
+
 // actions creator
 const BOOK_ADDED = 'BOOK_ADDED';
 const BOOK_REMOVED = 'BOOK_REMOVED';
@@ -5,7 +7,7 @@ export const addBookAction = (bookObject) => ({ type: 'BOOK_ADDED', payload: boo
 export const removeBookAction = (bookID) => ({ type: 'BOOK_REMOVED', payload: bookID });
 const initialState = [
   {
-    id: 1,
+    id: v4(),
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
     nbreChp: 25,
@@ -13,7 +15,7 @@ const initialState = [
     category: 'Action',
   },
   {
-    id: 2,
+    id: v4(),
     title: 'Dune',
     author: 'Frank Herbert',
     nbreChp: 40,
@@ -21,7 +23,7 @@ const initialState = [
     category: 'Science Fiction',
   },
   {
-    id: 3,
+    id: v4(),
     title: 'Test 3 Book',
     author: 'test3 Author',
     nbreChp: 15,
@@ -29,7 +31,7 @@ const initialState = [
     category: 'test Category',
   },
   {
-    id: 4,
+    id: v4(),
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
     nbreChp: 60,

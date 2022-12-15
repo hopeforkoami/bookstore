@@ -1,12 +1,15 @@
 export const statuCheckAction = () => ({
   type: 'STATUS_CHECKED',
+  payload: 'Under construction',
 });
 const initStateCategorie = [];
 
 const categoriesReducer = (state = initStateCategorie, action) => {
   switch (action.type) {
-    case statuCheckAction: return 'Under construction';
-    default: return state;
+    case 'STATUS_CHECKED':
+      return action.payload;
+    default:
+      return state;
   }
 };
 
