@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 const BookList = (props) => {
-  const { books } = props;
+  const { books, removeHandler } = props;
   return (
     <ul className="booklist">
       {
@@ -11,6 +11,7 @@ const BookList = (props) => {
             <Book
               key={bookElment.id}
               bookdata={bookElment}
+              removeBookFromList={removeHandler}
             />
           ))
         }
@@ -29,5 +30,6 @@ BookList.propTypes = {
       category: PropTypes.string,
     }),
   ).isRequired,
+  removeHandler: PropTypes.func.isRequired,
 };
 export default BookList;

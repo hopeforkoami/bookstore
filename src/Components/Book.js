@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 
 const Book = (props) => {
   const { bookdata } = props;
+  const clickHandler = () => {
+    console.log('test');
+  };
+  console.log(props);
   const readingPrctg = Math.floor((bookdata.crtChp / bookdata.nbreChp) * 100);
   return (
     <li className="bookElmt">
@@ -14,7 +18,8 @@ const Book = (props) => {
         <span className="book_author">{bookdata.author}</span>
         <ul className="book_actions">
           <li className="book_actions_elmt book_actions_elmt_first book_comment">Comments</li>
-          <li className="book_actions_elmt book_remove">Remove</li>
+          <button type="button" className="book_actions_elmt book_edit" onClick={clickHandler}>Remove</button>
+
           <li className="book_actions_elmt book_edit">Edit</li>
         </ul>
       </div>
@@ -52,5 +57,6 @@ Book.propTypes = {
     crtChp: PropTypes.number,
     category: PropTypes.string,
   }).isRequired,
+  //  removeBookFromList: PropTypes.func.isRequired,
 };
 export default Book;
