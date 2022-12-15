@@ -1,52 +1,30 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import AddBook from '../Components/AddBook';
 import BookList from '../Components/BookList';
 import Header from '../Components/Header';
+import { removeBookAction, addBookAction } from '../redux/books/book';
 
-const bookData = [
-  {
-    id: 1,
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    nbreChp: 25,
-    crtChp: 10,
-    category: 'Action',
-  },
-  {
-    id: 2,
-    title: 'Dune',
-    author: 'Frank Herbert',
-    nbreChp: 40,
-    crtChp: 8,
-    category: 'Science Fiction',
-  },
-  {
-    id: 3,
-    title: 'Test 3 Book',
-    author: 'test3 Author',
-    nbreChp: 15,
-    crtChp: 5,
-    category: 'test Category',
-  },
-  {
-    id: 4,
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
-    nbreChp: 60,
-    crtChp: 0,
-    category: 'Economy',
-  },
-];
-const BookPage = () => (
-  <div className="container">
-    <Header />
-    <section className="section">
-      <BookList books={bookData} />
-      <div className="grand_divider" />
-      <AddBook />
-    </section>
+const BookPage = () => {
+  const bookData = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  const removeBookFromList = (idBook) => {
+    dispatch(removeBookAction(idBook));
+  };
+  const addBookToList = (abook) => {
+    dispatch(addBookAction(abook));
+  };
+  return (
+    <div className="container">
+      <Header />
+      <section className="section">
+        <BookList books={bookData} removeHandler={removeBookFromList} />
+        <div className="grand_divider" />
+        <AddBook addBookHandler={addBookToList} />
+      </section>
 
-  </div>
-);
+    </div>
+  );
+};
 
 export default BookPage;

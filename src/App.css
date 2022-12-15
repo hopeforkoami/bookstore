@@ -150,6 +150,11 @@ header {
   padding-left: 1rem !important;
 }
 
+.book_actions_elmt_button {
+  border: none;
+  background-color: inherit;
+}
+
 .book_actions_elmt_first {
   border-left: none !important;
   padding-left: 0 !important;
