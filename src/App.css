@@ -149,7 +149,8 @@ header {
   color: white;
   padding-left: 1rem !important;
 }
-.book_actions_elmt_button{
+
+.book_actions_elmt_button {
   border: none;
   background-color: inherit;
 }
