@@ -8,7 +8,6 @@ const Book = (props) => {
   const clickHandler = () => {
     removeBookFromList(bookdata.id);
   };
-  const readingPrctg = Math.floor((bookdata.crtChp / bookdata.nbreChp) * 100);
   return (
     <li className="bookElmt">
       <div className="bookDetails">
@@ -26,19 +25,19 @@ const Book = (props) => {
         <div className="reading_progress">
           <CircularProgressbar
             className="progress_diagram"
-            value={readingPrctg}
-            text={`${readingPrctg}%`}
+            value="20"
+            text="20%"
           />
 
           <div className="progress_details">
-            <span className="progress_pourcentage">{`${readingPrctg}%`}</span>
+            <span className="progress_pourcentage">{`${20}%`}</span>
             <span className="progress_statut">Completed</span>
           </div>
         </div>
         <div className="divider" />
         <div className="more_action">
           <span className="current_chapter_label">CURRENT CHAPTER</span>
-          <span className="current_chapter">{`Chapter : ${readingPrctg}`}</span>
+          <span className="current_chapter">Chapter : 20</span>
           <button type="button" className="button_update_progress"> UPDATE PROGRESS</button>
         </div>
       </div>
@@ -52,8 +51,6 @@ Book.propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
-    nbreChp: PropTypes.number,
-    crtChp: PropTypes.number,
     category: PropTypes.string,
   }).isRequired,
   removeBookFromList: PropTypes.func.isRequired,

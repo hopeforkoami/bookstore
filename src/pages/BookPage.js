@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AddBook from '../Components/AddBook';
 import BookList from '../Components/BookList';
 import Header from '../Components/Header';
-import { removeBookAction, addBookAction } from '../redux/books/book';
+import { removeBookAction, addBookAction, getBooksAction } from '../redux/books/book';
 
 const BookPage = () => {
-  const bookData = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooksAction());
+  }, [dispatch]);
+  const bookData = useSelector((state) => state.books);
   const removeBookFromList = (idBook) => {
     dispatch(removeBookAction(idBook));
   };
