@@ -15,7 +15,7 @@ const AddBook = (props) => {
       author,
       nbreChp: 26,
       crtChp: 0,
-      category: 'Unknown',
+      category: 'Book',
     });
     setTitle('');
     setAuthor('');

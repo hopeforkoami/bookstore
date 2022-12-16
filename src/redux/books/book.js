@@ -1,44 +1,32 @@
-import { v4 } from 'uuid';
+import bookApi from '../../api/bookApi';
 
 // actions creator
 const BOOK_ADDED = 'BOOK_ADDED';
 const BOOK_REMOVED = 'BOOK_REMOVED';
-export const addBookAction = (bookObject) => ({ type: 'BOOK_ADDED', payload: bookObject });
-export const removeBookAction = (bookID) => ({ type: 'BOOK_REMOVED', payload: bookID });
-const initialState = [
-  {
-    id: v4(),
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    nbreChp: 25,
-    crtChp: 10,
-    category: 'Action',
-  },
-  {
-    id: v4(),
-    title: 'Dune',
-    author: 'Frank Herbert',
-    nbreChp: 40,
-    crtChp: 8,
-    category: 'Science Fiction',
-  },
-  {
-    id: v4(),
-    title: 'Test 3 Book',
-    author: 'test3 Author',
-    nbreChp: 15,
-    crtChp: 5,
-    category: 'test Category',
-  },
-  {
-    id: v4(),
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
-    nbreChp: 60,
-    crtChp: 0,
-    category: 'Economy',
-  },
-];
+const BOOK_GETTED = 'BOOK_GETTED';
+export const addBookAction = (bookObject) => async (dispatch) => {
+  bookApi.addNewBook(bookObject);
+  dispatch({
+    type: 'BOOK_ADDED',
+    payload: bookObject,
+  });
+};
+export const removeBookAction = (bookID) => async (dispatch) => {
+  bookApi.removeBook(bookID);
+  dispatch({
+    type: 'BOOK_REMOVED',
+    payload: bookID,
+  });
+};
+
+export const getBooksAction = () => async (dispatch) => {
+  const allBooks = await bookApi.getBooks();
+  dispatch({
+    type: BOOK_GETTED,
+    payload: allBooks,
+  });
+};
+const initialState = [];
 // reducer
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -49,6 +37,7 @@ const bookReducer = (state = initialState, action) => {
       ];
     }
     case BOOK_REMOVED: return state.filter((book) => book.id !== action.payload);
+    case BOOK_GETTED: return action.payload;
     default: return state;
   }
 };
